@@ -26,3 +26,9 @@ hs_err_pid*
 
 # IntelliJ project files
 .idea/
+
+# VSCode project files
+.vscode/
+
+# Fork files
+.fork/

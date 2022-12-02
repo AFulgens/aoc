@@ -3,7 +3,7 @@ package xyz.kovacs.aoc2021.day05;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
-import java.awt.Point;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +36,7 @@ public class Day05 {
 		                                                                                                                   .getX(), pair.getRight()
 		                                                                                                                                .getY())))
 		                         .mapToInt(Double::intValue).max()
-		                         .orElseThrow(() -> new IllegalStateException("No bueno, could not determine max"));
+		                         .orElseThrow();
 		++dimension;
 		
 		int[][] map = new int[dimension][dimension];

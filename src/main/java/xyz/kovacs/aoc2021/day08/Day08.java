@@ -23,12 +23,10 @@ public class Day08 {
 	 * Solution for puzzle 1.
 	 */
 	public static void doPuzzle1(String inputFile) {
-		getLogger(u -> u).info(getAllLines(() -> inputFile).stream()
-		                                                   .map(line -> StringUtils.substringAfterLast(line, "|"))
+		getLogger(u -> u).info(getAllLines(() -> inputFile).stream().map(line -> StringUtils.substringAfterLast(line, "|"))
 		                                                   .flatMap(digits -> Arrays.stream(StringUtils.split(digits, " ")))
 		                                                   .map(StringUtils::length)
-		                                                   .filter(s -> s == 2 || s == 3 || s == 4 || s == 7)
-		                                                   .count());
+		                                                   .filter(s -> s == 2 || s == 3 || s == 4 || s == 7).count());
 	}
 	
 	/**
@@ -63,16 +61,14 @@ public class Day08 {
 		Set<Wire> rightBottom = EnumSet.allOf(Wire.class);
 		Set<Wire> bottom = EnumSet.allOf(Wire.class);
 		
-		final String one = oracle.stream().filter(o -> o.length() == 2).findFirst()
-		                         .orElseThrow(() -> new IllegalStateException("No bueno, I need a 1"));
+		final String one = oracle.stream().filter(o -> o.length() == 2).findFirst().orElseThrow();
 		oracle.removeIf(one::equals);
 		Set<Wire> segmentsOfOne = Wire.wiresOf(one);
 		getLogger(u -> u).debug("1 has: {}", segmentsOfOne);
 		rightTop.retainAll(segmentsOfOne);
 		rightBottom.retainAll(segmentsOfOne);
 		
-		final String seven = oracle.stream().filter(o -> o.length() == 3).findFirst()
-		                           .orElseThrow(() -> new IllegalStateException("No bueno, I need a 7"));
+		final String seven = oracle.stream().filter(o -> o.length() == 3).findFirst().orElseThrow();
 		oracle.removeIf(seven::equals);
 		Set<Wire> segmentsOfSeven = Wire.wiresOf(seven);
 		getLogger(u -> u).debug("7 has: {}", segmentsOfSeven);
@@ -81,8 +77,7 @@ public class Day08 {
 		getLogger(u -> u).debug("=> Top: {}", top);
 		assert (top.size() == 1);
 		
-		final String four = oracle.stream().filter(o -> o.length() == 4).findFirst()
-		                          .orElseThrow(() -> new IllegalStateException("No bueno, I need a 4"));
+		final String four = oracle.stream().filter(o -> o.length() == 4).findFirst().orElseThrow();
 		oracle.removeIf(four::equals);
 		Set<Wire> segmentsOfFour = Wire.wiresOf(four);
 		getLogger(u -> u).debug("4 has: {}", segmentsOfFour);
@@ -95,8 +90,7 @@ public class Day08 {
 		bottom.removeAll(segmentsOfSeven);
 		bottom.removeAll(segmentsOfFour);
 		
-		final String eight = oracle.stream().filter(o -> o.length() == 7).findFirst()
-		                           .orElseThrow(() -> new IllegalStateException("No bueno, I need an 8"));
+		final String eight = oracle.stream().filter(o -> o.length() == 7).findFirst().orElseThrow();
 		oracle.removeIf(eight::equals);
 		Set<Wire> segmentsOfEight = Wire.wiresOf(eight);
 		getLogger(u -> u).debug("8 has: {}", segmentsOfEight); // 🤣

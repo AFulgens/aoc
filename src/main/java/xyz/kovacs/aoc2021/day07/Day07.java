@@ -52,7 +52,7 @@ public class Day07 {
 		                                       .mapToInt(i -> diff.apply(i, middle))
 		                                       .sum())
 		                   .min()
-		                   .orElseThrow(() -> new IllegalStateException("No bueno, could not determine min"));
+		                   .orElseThrow();
 		
 		getLogger(u -> u).info(sum);
 	}

@@ -44,7 +44,6 @@ public class AocUtils {
 			                                                                                             .getName(), "$$Lambda$"), ".");
 			path.append(RegExUtils.replaceAll(packageName, "\\.", "/")).append("/").append(pathSupplier.get());
 			
-			//noinspection ConstantConditions
 			return Files.readAllLines(Paths.get(pathSupplier.getClass().getResource(path.toString()).toURI()));
 		} catch (URISyntaxException | IOException | NullPointerException e) {
 			getLogger(u -> u).error("No bueno, cannot open '{}'", pathSupplier.get(), e);
@@ -99,6 +98,16 @@ public class AocUtils {
 	 * Logs the given map with the given logger on the given level.
 	 */
 	public static void logMap(int[][] map, Logger logger, Level level) {
+		logger.atLevel(level).log("Map is:");
+		for (int i = 0; i < map.length; ++i) {
+			logger.atLevel(level).log(Arrays.toString(map[i]));
+		}
+	}
+	
+	/**
+	 * Logs the given map with the given logger on the given level.
+	 */
+	public static void logMap(long[][] map, Logger logger, Level level) {
 		logger.atLevel(level).log("Map is:");
 		for (int i = 0; i < map.length; ++i) {
 			logger.atLevel(level).log(Arrays.toString(map[i]));

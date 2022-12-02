@@ -26,12 +26,10 @@ public class Day13 {
 	public static void doPuzzle(String inputFile) {
 		List<String> input = getAllLines(() -> inputFile);
 		
-		int ṽ = input.stream().filter(l -> StringUtils.isNotBlank(l)).filter(l -> Character.isDigit(l.charAt(0)))
-		             .flatMap(l -> Stream.of(l.split(",")[0])).mapToInt(Integer::parseInt).max()
-		             .orElseThrow(() -> new IllegalStateException("No bueno, cannot determine max")) + 1;
-		int ħ = input.stream().filter(l -> StringUtils.isNotBlank(l)).filter(l -> Character.isDigit(l.charAt(0)))
-		             .flatMap(l -> Stream.of(l.split(",")[1])).mapToInt(Integer::parseInt).max()
-		             .orElseThrow(() -> new IllegalStateException("No bueno, cannot determine max")) + 1;
+		int ṽ = input.stream().filter(StringUtils::isNotBlank).filter(l -> Character.isDigit(l.charAt(0)))
+		             .flatMap(l -> Stream.of(l.split(",")[0])).mapToInt(Integer::parseInt).max().orElseThrow() + 1;
+		int ħ = input.stream().filter(StringUtils::isNotBlank).filter(l -> Character.isDigit(l.charAt(0)))
+		             .flatMap(l -> Stream.of(l.split(",")[1])).mapToInt(Integer::parseInt).max().orElseThrow() + 1;
 		
 		boolean[][] map = new boolean[ħ][ṽ];
 		int ł = 0;
