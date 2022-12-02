@@ -3,7 +3,7 @@
 		 xmlns="http://maven.apache.org/POM/4.0.0"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>xyz.kovacs</groupId>
 	<artifactId>aoc2021</artifactId>
 	<version>0.1-SNAPSHOT</version>
@@ -11,15 +11,18 @@
 	<properties>
 		<jvm.option.1>--enable-preview</jvm.option.1>
 		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 		
 		<version.commons-lang3>3.12.0</version.commons-lang3>
-		<version.streamex>0.8.0</version.streamex>
-		<version.log4j2>2.15.0</version.log4j2>
+		<version.commons-collections4>4.4</version.commons-collections4>
+		<version.streamex>0.8.1</version.streamex>
+		<version.log4j2>2.19.0</version.log4j2>
 		
-		<version.plugin.compiler>3.8.1</version.plugin.compiler>
-		<version.plugin.surefire>3.0.0-M5</version.plugin.surefire>
+		<version.plugin.compiler>3.10.1</version.plugin.compiler>
+		<version.plugin.surefire>3.0.0-M7</version.plugin.surefire>
 	</properties>
 	
 	<dependencyManagement>
@@ -28,6 +31,11 @@
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
 				<version>${version.commons-lang3}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-collections4</artifactId>
+				<version>${version.commons-collections4}</version>
 			</dependency>
 			
 			<dependency>
@@ -67,6 +75,10 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+		</dependency>
 		
 		<dependency>
 			<groupId>one.util</groupId>
@@ -99,6 +111,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.plugin.compiler}</version>
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
@@ -108,6 +121,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${version.plugin.surefire}</version>
 				<configuration>
 					<argLine>${jvm.option.1}</argLine>
 				</configuration>
