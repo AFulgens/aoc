@@ -11,7 +11,6 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 import static xyz.kovacs.util.AocUtils.getAllLines;
@@ -19,11 +18,11 @@ import static xyz.kovacs.util.AocUtils.getAllLines;
 public class Day01 {
 	
 	public static void main(String[] args) {
-		Day01 day01 = new Day01();
-		day01.doPuzzle("sample", 1);
-		day01.doPuzzle("input", 1);
-		day01.doPuzzle("sample", 3);
-		day01.doPuzzle("input", 3);
+		Day01 day = new Day01();
+		day.doPuzzle("sample", 1);
+		day.doPuzzle("input", 1);
+		day.doPuzzle("sample", 3);
+		day.doPuzzle("input", 3);
 	}
 
 	private final Logger log = getLogger(u -> u);
