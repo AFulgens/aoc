@@ -1,6 +1,7 @@
 package xyz.kovacs.aoc2021.day01;
 
 import one.util.streamex.StreamEx;
+import xyz.kovacs.util.TimeAspect.TrackTime;
 
 import java.util.OptionalDouble;
 
@@ -29,6 +30,7 @@ public class Day01 {
 	/**
 	 * Solution for puzzle 1 (window = 1), and puzzle 2 (window = 3).
 	 */
+	@TrackTime
 	public static void doPuzzle2(String inputFile, int window) {
 		getLogger(u -> u).info("{} (window of {}): {}",
 		                       inputFile,

@@ -3,6 +3,8 @@ package xyz.kovacs.aoc2021.day13;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Level;
 
+import xyz.kovacs.util.TimeAspect.TrackTime;
+
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -23,6 +25,7 @@ public class Day13 {
 	 *   <li>puzzle 2 (look for the last message and decipher it by brainpower)</li>
 	 * </ul>
 	 */
+	@TrackTime
 	public static void doPuzzle(String inputFile) {
 		List<String> input = getAllLines(() -> inputFile);
 		
