@@ -20,7 +20,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		
 		<version.aspectj>1.9.7</version.aspectj>
-		<version.commons-lang3>3.12.0</version.commons-lang3>
+		<version.commons-lang3>3.18.0</version.commons-lang3>
 		<version.commons-collections4>4.4</version.commons-collections4>
 		<version.streamex>0.8.1</version.streamex>
 		<version.log4j2>2.19.0</version.log4j2>
