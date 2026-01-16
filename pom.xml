@@ -23,7 +23,7 @@
 		<version.commons-lang3>3.12.0</version.commons-lang3>
 		<version.commons-collections4>4.4</version.commons-collections4>
 		<version.streamex>0.8.1</version.streamex>
-		<version.log4j2>2.19.0</version.log4j2>
+		<version.log4j2>2.25.3</version.log4j2>
 		
 		<version.plugin.compiler>3.10.1</version.plugin.compiler>
 		<version.plugin.surefire>3.0.0-M7</version.plugin.surefire>
